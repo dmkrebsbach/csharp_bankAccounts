@@ -1,0 +1,83 @@
+*{
+    margin: 0px;
+    padding:0px;
+}
+
+.container{
+    margin-top: 50px;
+    width: 100%;
+}
+
+h4 {
+    display: block;
+    margin: 5px auto;
+    text-align: center;
+}
+
+h1 {
+    display: block;
+    margin: 20px auto;
+    color: navy;
+    text-align: center;
+    width: 100%;
+}
+
+h3 {
+    display: block;
+    margin: 20px auto;
+    color: navy;
+    text-align: center;
+    width: 100%;
+    border-bottom: 1px solid black;
+}
+
+a {
+    text-decoration: none;
+}
+
+table.history {
+    width: 40%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0px auto;
+}
+
+table.history td {
+    text-align: center;
+    color: red;
+    margin: 0px auto;
+    width: 24%;
+}
+
+table.history th {
+    border: 3px solid black;
+}
+
+table.history tr {
+    margin: 0px auto;
+    width: 24%;
+    border: 1px solid black;
+}
+
+.transaction {
+    display: block;
+    width: 100%;
+    margin: 0px auto;
+}
+
+.transaction form {
+    width: 25%;
+    margin: 10px auto;
+    border: 1px solid black;
+    padding: 4px;
+}
+
+input {
+    height: 30px;
+    margin: 3px auto;
+}
+
+input.button {
+    display: block;
+    margin: 0px auto;
+}
