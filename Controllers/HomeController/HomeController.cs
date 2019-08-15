@@ -82,17 +82,23 @@ namespace bankAccount.Controllers  //change projectName to the name of project
 
         [HttpGet("account")]
         public IActionResult Account(){
-            AccountView viewModel = new AccountView();
+            if(HttpContext.Session.GetString("userInSess") != null){
+                AccountView viewModel = new AccountView();
 
-            viewModel.User = dbContext.Users
-                .Include(u => u.Transactions)
-                .FirstOrDefault(u => u.UserId == HttpContext.Session.GetInt32("userInSess"));
+                viewModel.User = dbContext.Users
+                    .Include(u => u.Transactions)
+                    .FirstOrDefault(u => u.UserId == HttpContext.Session.GetInt32("userInSess"));
 
-            
-            decimal sum = viewModel.User.Transactions.Select(a => a.Amount).Sum();
-            ViewBag.sum = sum;
+                
+                decimal sum = viewModel.User.Transactions.Select(a => a.Amount).Sum();
+                ViewBag.sum = sum;
 
-            return View("Account", viewModel);
+                return View("Account", viewModel);
+            }
+            else
+            {
+                return RedirectToAction("Index");
+            }
         }
 
         [HttpPost("createtransaction")]
